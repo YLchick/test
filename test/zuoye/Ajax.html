@@ -1,0 +1,27 @@
+<html>
+<head> 
+<title></title>
+<meta charset="UTF-8">
+</head> 
+<body> 
+<script src="jquery-3.5.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script language="javascript">
+$(function(){
+	$("#btn").click(function(){
+		$.ajax({
+		 type: "GET",
+		 url: "Ajax.jsp",
+		 //dataType:"json",
+		 success: function(data){
+		 document.myform.time.value=data;
+		 }
+		});
+		});
+});
+</script> 
+<form name="myform">
+ <input type="button" value="click me" id="btn"/>
+ 时间: <input type="text" name="time"/>
+</form>
+</body>
+</html>
